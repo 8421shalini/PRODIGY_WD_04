@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!----------HEADER--------->
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home"class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#project">Project</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <!-----------Home section Design----------->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Shalini</h1>
+            <h3>And I'm a <span>Frontend Developer</span></h3>
+            <div class="social-media">
+                <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="#"><i class='bx bxl-twitter' ></i></a>
+                <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+                <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <img src="images/shalini.jpg" alt="">
+        </div>
+        
+    </section>
+    <!------------About------------------->
+    <div id="about">
+        <div class="conatainer">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/shalini.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me!</h1>
+                    <p>Hello, I'm Shalini, a passionate Frontend Developer with a flair for crafting intuitive and visually captivating web experiences. With a background in web development and design, I am dedicated to creating user-friendly and engaging websites that leave a lasting impression.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <h2>Skills</h2>
+                            <ul>
+                                <li><span>Web Development</span><br>Passionate web developer crafting digital experiences to transform ideas into interactive and user-friendly websites.</li>
+                                <li><span>Web Designer</span><br>Creative web designer shaping visually captivating and user-centric digital interfaces.</li>
+                                <li><span>UI/UX</span><br>UI/UX designer dedicated to enhancing user satisfaction by crafting intuitive and visually appealing digital experiences.</li>
+                            </ul>
+                    </div>    
+                    
+                    <div class="tab-contents" id="education">
+                        <h2>Education</h2>
+                        <ul>
+                            <li><span>2021-current</span><br>IBSAR Group of Colleges, Karjat</li>
+                            <li><span>2019-21</span><br>Anand Shala Junior College</li>
+                        </ul>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <!----------Projects------------------->
+    <!----------Projects------------------->
+    <section class="projects" id="project">
+        <h1>Projects</h1>
+    
+        <!-- Project Cards -->
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="images/tic tac toe.PNG" alt="TIC TAC TOE" width="280" height="200">
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h2>TIC TAC TOE</h2>
+                        <p>A classic game of Tic Tac Toe implemented using HTML, CSS, and JavaScript. This project demonstrates my proficiency in front-end web development and interactive game design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="images/stopwatch.PNG" alt="Digital Clock" width="280" height="200">
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h2>Digital Clock</h2>
+                        <p>A digital clock with pause and laps lets you freeze time when needed and record important intervals, making it a handy tool for tracking and managing time during various activities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="images/coffee.PNG" alt="Coffee Shop" width="280" height="200">
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h2>Coffee Shop</h2>
+                        <p>Launching a charming local coffee shop, serving artisanal coffee, fresh pastries, and a warm atmosphere. Our project is dedicated to crafting exceptional coffee experiences in a welcoming community space.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----------Contact------------------------->
+    <section class="contact" id="contact">
+       <h2 class="heading">Contact<span> Me!</span></h2>
+       
+       <form action="#">
+        <div class="input-box">
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email Address">
+        </div>
+        <div class="input-box">
+            <input type="number" placeholder="Mobile Number">
+            <input type="text" placeholder="Email Subject">
+        </div>
+        <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+        <input type="submit" value="Send Message" class="btn">
+       </form>
+    </section>
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname) {
+    for (var i = 0; i < tabcontents.length; i++) {
+        tabcontents[i].style.display = "none";
+    }
+    for (var i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active-link");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).style.display = "block";
+}
+
+for (var i = 0; i < tablinks.length; i++) {
+    tablinks[i].addEventListener("click", function() {
+        var tabName = this.innerText.toLowerCase(); // Get tab name from link text
+        opentab(tabName);
+    });
+}
+
+</script>
+</body>
+</html>
+
+
+
